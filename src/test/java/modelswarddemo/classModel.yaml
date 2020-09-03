@@ -1,0 +1,38 @@
+- c: 	ClassModel
+  classes: 	modelswardStoryTest
+  defaultCollectionType: 	c1
+  defaultPropertyStyle: 	Bean
+  defaultRoleType: 	"java.util.ArrayList<%s>"
+  mainJavaDir: 	"src/test/java"
+  packageName: 	modelswarddemo
+  packageSrcFolder: 	"src/test/java/modelswarddemo"
+
+- modelswardStoryTest: 	Clazz
+  importList: 	org.junit.Test
+  imports: 	org.junit.Test
+  methods: 	uniKasselShopStory
+  model: 	c
+  modified: 	false
+  name: 	ModelswardStoryTest
+  propertyStyle: 	Bean
+
+- c1: 	CollectionType
+  implClass: 	class java.util.ArrayList
+  implTemplate: 	"java.util.ArrayList<%s>"
+  itf: 	org.fulib.classmodel.CollectionInterface.List
+  qualifiedImplName: 	java.util.ArrayList
+  simpleImplName: 	ArrayList
+
+- uniKasselShopStory: 	FMethod
+  annotations: 	"@Test"
+  clazz: 	modelswardStoryTest
+  declaration: 	"@Test
+   public void uniKasselShopStory()"
+  methodBody: 	""
+  modified: 	false
+  modifiers: 	public
+  name: 	uniKasselShopStory
+  paramsString: 	""
+  returnType: 	void
+  signature: 	"class/ModelswardStoryTest/method/uniKasselShopStory()"
+
