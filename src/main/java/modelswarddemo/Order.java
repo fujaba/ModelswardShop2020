@@ -18,6 +18,7 @@ public class Order
    protected PropertyChangeSupport listeners;
    public static final String PROPERTY_products = "products";
    private List<Product> products;
+   private String state = "initial";
 
    public String getOrderId()
    {
@@ -209,5 +210,10 @@ public class Order
          this.withoutProducts(item);
       }
       return this;
+   }
+
+   public String getState()
+   {
+      return this.state;
    }
 }

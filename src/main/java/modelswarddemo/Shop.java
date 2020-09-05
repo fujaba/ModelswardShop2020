@@ -228,4 +228,22 @@ public class Shop
       this.withoutCustomers(new ArrayList<>(this.getCustomers()));
       this.withoutProducts(new ArrayList<>(this.getProducts()));
    }
+
+   public void process(Order order)
+   {
+      if (order.getState().equals("initial")) {
+         requestPayment(order);
+      }
+      else if (order.getState().equals("payed")) {
+         deliver(order);
+      }
+   }
+
+   private void deliver(Order order)
+   {
+   }
+
+   private void requestPayment(Order order)
+   {
+   }
 }
