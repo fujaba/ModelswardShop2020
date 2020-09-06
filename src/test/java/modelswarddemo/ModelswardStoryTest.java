@@ -10,7 +10,7 @@ public class ModelswardStoryTest
    @Test
    public void testPayPal()
    {
-      Shop uksShop = new Shop().setName("UKSShop");
+      Store uksShop = new Store().setName("UKSShop");
       Customer alice = new Customer().setCustomerId("alice1").setName("Alice")
             .setAddress("Wonderland 1").setShop(uksShop);
       Customer bob = new Customer().setCustomerId("bob2").setName("Bob")

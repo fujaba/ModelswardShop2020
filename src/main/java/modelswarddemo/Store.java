@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.beans.PropertyChangeSupport;
 import java.beans.PropertyChangeListener;
 
-public class Shop
+public class Store
 {
    public static final String PROPERTY_name = "name";
    private String name;
@@ -22,7 +22,7 @@ public class Shop
       return this.name;
    }
 
-   public Shop setName(String value)
+   public Store setName(String value)
    {
       if (Objects.equals(value, this.name))
       {
@@ -40,7 +40,7 @@ public class Shop
       return this.customers != null ? Collections.unmodifiableList(this.customers) : Collections.emptyList();
    }
 
-   public Shop withCustomers(Customer value)
+   public Store withCustomers(Customer value)
    {
       if (this.customers == null)
       {
@@ -55,7 +55,7 @@ public class Shop
       return this;
    }
 
-   public Shop withCustomers(Customer... value)
+   public Store withCustomers(Customer... value)
    {
       for (final Customer item : value)
       {
@@ -64,7 +64,7 @@ public class Shop
       return this;
    }
 
-   public Shop withCustomers(Collection<? extends Customer> value)
+   public Store withCustomers(Collection<? extends Customer> value)
    {
       for (final Customer item : value)
       {
@@ -73,7 +73,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutCustomers(Customer value)
+   public Store withoutCustomers(Customer value)
    {
       if (this.customers != null && this.customers.remove(value))
       {
@@ -83,7 +83,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutCustomers(Customer... value)
+   public Store withoutCustomers(Customer... value)
    {
       for (final Customer item : value)
       {
@@ -92,7 +92,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutCustomers(Collection<? extends Customer> value)
+   public Store withoutCustomers(Collection<? extends Customer> value)
    {
       for (final Customer item : value)
       {
@@ -106,7 +106,7 @@ public class Shop
       return this.products != null ? Collections.unmodifiableList(this.products) : Collections.emptyList();
    }
 
-   public Shop withProducts(Product value)
+   public Store withProducts(Product value)
    {
       if (this.products == null)
       {
@@ -121,7 +121,7 @@ public class Shop
       return this;
    }
 
-   public Shop withProducts(Product... value)
+   public Store withProducts(Product... value)
    {
       for (final Product item : value)
       {
@@ -130,7 +130,7 @@ public class Shop
       return this;
    }
 
-   public Shop withProducts(Collection<? extends Product> value)
+   public Store withProducts(Collection<? extends Product> value)
    {
       for (final Product item : value)
       {
@@ -139,7 +139,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutProducts(Product value)
+   public Store withoutProducts(Product value)
    {
       if (this.products != null && this.products.remove(value))
       {
@@ -149,7 +149,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutProducts(Product... value)
+   public Store withoutProducts(Product... value)
    {
       for (final Product item : value)
       {
@@ -158,7 +158,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutProducts(Collection<? extends Product> value)
+   public Store withoutProducts(Collection<? extends Product> value)
    {
       for (final Product item : value)
       {
