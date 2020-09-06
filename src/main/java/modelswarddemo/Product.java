@@ -19,7 +19,7 @@ public class Product
    public static final String PROPERTY_orders = "orders";
    private List<Order> orders;
    public static final String PROPERTY_shop = "shop";
-   private Shop shop;
+   private Store shop;
 
    public String getProductId()
    {
@@ -204,11 +204,6 @@ public class Product
       this.withoutOrders(new ArrayList<>(this.getOrders()));
    }
 
-   public Shop getShop()
-   {
-      return this.shop;
-   }
-
    public Product setShop(Store value)
    {
       if (this.shop == value)
@@ -231,25 +226,8 @@ public class Product
       return this;
    }
 
-public Product setShop(Shop value)
+   public Store getShop()
    {
-      if (this.shop == value)
-      {
-         return this;
-      }
-
-      final Shop oldValue = this.shop;
-      if (this.shop != null)
-      {
-         this.shop = null;
-         oldValue.withoutProducts(this);
-      }
-      this.shop = value;
-      if (value != null)
-      {
-         value.withProducts(this);
-      }
-      this.firePropertyChange(PROPERTY_shop, oldValue, value);
-      return this;
+      return this.shop;
    }
 }

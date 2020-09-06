@@ -12,7 +12,7 @@
 <!-- uKSShop -->
 <g id="node1" class="node"><title>uKSShop</title>
 <polygon fill="none" stroke="black" points="250,-221 250,-238 336,-238 336,-221 250,-221"/>
-<text text-anchor="start" x="261" y="-228" font-family="Times New Roman,serif" text-decoration="underline" font-size="10.00">uKSShop :Shop</text>
+<text text-anchor="start" x="261" y="-228" font-family="Times New Roman,serif" text-decoration="underline" font-size="10.00">uKSShop :Store</text>
 <polygon fill="none" stroke="black" points="250,-204 250,-221 336,-221 336,-204 250,-204"/>
 <text text-anchor="start" x="253" y="-210" font-family="Times New Roman,serif" font-size="10.00">name = &quot;UKSShop&quot;</text>
 </g>

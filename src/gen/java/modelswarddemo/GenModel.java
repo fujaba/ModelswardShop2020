@@ -11,7 +11,7 @@ public class GenModel implements ClassModelDecorator
 	@Override
 	public void decorate(ClassModelManager mm)
 	{
-		Clazz shop = mm.haveClass("Shop", c -> {
+		Clazz shop = mm.haveClass("Store", c -> {
 			c.attribute("name", STRING);
 		});
 		Clazz customer = mm.haveClass("Customer", c ->

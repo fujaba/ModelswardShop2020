@@ -1,5 +1,5 @@
 - c: 	ClassModel
-  classes: 	shop 	customer 	product 	order
+  classes: 	store 	customer 	product 	order
   defaultCollectionType: 	c1
   defaultPropertyStyle: 	Bean
   defaultRoleType: 	"java.util.ArrayList<%s>"
@@ -7,13 +7,13 @@
   packageName: 	modelswarddemo
   packageSrcFolder: 	"src/main/java/modelswarddemo"
 
-- shop: 	Clazz
-  attributes: 	shop_name
+- store: 	Clazz
+  attributes: 	store_name
   model: 	c
   modified: 	false
-  name: 	Shop
+  name: 	Store
   propertyStyle: 	Bean
-  roles: 	shop_customers 	shop_products
+  roles: 	store_customers 	store_products
 
 - customer: 	Clazz
   attributes: 	customer_customerId 	customer_name 	customer_address
@@ -46,32 +46,32 @@
   qualifiedImplName: 	java.util.ArrayList
   simpleImplName: 	ArrayList
 
-- shop_name: 	Attribute
-  clazz: 	shop
-  id: 	Shop_name
+- store_name: 	Attribute
+  clazz: 	store
+  id: 	Store_name
   modified: 	false
   name: 	name
   propertyStyle: 	Bean
   type: 	String
 
-- shop_customers: 	AssocRole
+- store_customers: 	AssocRole
   aggregation: 	false
   cardinality: 	42
-  clazz: 	shop
+  clazz: 	store
   collectionType: 	c1
-  id: 	Shop_customers
+  id: 	Store_customers
   modified: 	false
   name: 	customers
   other: 	customer_shop
   propertyStyle: 	Bean
   roleType: 	"java.util.ArrayList<%s>"
 
-- shop_products: 	AssocRole
+- store_products: 	AssocRole
   aggregation: 	false
   cardinality: 	42
-  clazz: 	shop
+  clazz: 	store
   collectionType: 	c1
-  id: 	Shop_products
+  id: 	Store_products
   modified: 	false
   name: 	products
   other: 	product_shop
@@ -110,7 +110,7 @@
   id: 	Customer_shop
   modified: 	false
   name: 	shop
-  other: 	shop_customers
+  other: 	store_customers
   propertyStyle: 	Bean
   roleType: 	"java.util.ArrayList<%s>"
 
@@ -158,7 +158,7 @@
   id: 	Product_shop
   modified: 	false
   name: 	shop
-  other: 	shop_products
+  other: 	store_products
   propertyStyle: 	Bean
   roleType: 	"java.util.ArrayList<%s>"
 
