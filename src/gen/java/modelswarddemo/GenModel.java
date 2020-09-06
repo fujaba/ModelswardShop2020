@@ -1,5 +1,6 @@
 package modelswarddemo;
 
+import org.fulib.Fulib;
 import org.fulib.builder.ClassModelDecorator;
 import org.fulib.builder.ClassModelManager;
 import org.fulib.classmodel.Clazz;
@@ -35,5 +36,7 @@ public class GenModel implements ClassModelDecorator
 		mm.associate(shop, "products", MANY, product, "shop", ONE);
 		mm.associate(customer, "orders", MANY, order, "customer", ONE);
 		mm.associate(order, "products", MANY, product, "orders", MANY);
+
+		Fulib.tablesGenerator().generate(mm.getClassModel());
 	}
 }
