@@ -246,4 +246,9 @@ public class Store
    private void requestPayment(Order order)
    {
    }
+
+   public void retrieve(Product product)
+   {
+
+   }
 }
