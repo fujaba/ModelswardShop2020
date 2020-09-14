@@ -7,22 +7,33 @@ import java.util.Collection;
 import java.beans.PropertyChangeSupport;
 import java.beans.PropertyChangeListener;
 
-public class Shop
+public class Store
 {
-   public static final String PROPERTY_name = "name";
-   private String name;
-   public static final String PROPERTY_customers = "customers";
-   private List<Customer> customers;
-   public static final String PROPERTY_products = "products";
-   private List<Product> products;
-   protected PropertyChangeSupport listeners;
+
+   public void process(Order order)
+   {
+      if (order.getState().equals("initial")) {
+         requestPayment(order);
+      }
+      else if (order.getState().equals("payed")) {
+         deliver(order);
+      }
+   }
+
+   private void deliver(Order order)
+   {
+   }
+
+   private void requestPayment(Order order)
+   {
+   }
 
    public String getName()
    {
       return this.name;
    }
 
-   public Shop setName(String value)
+   public Store setName(String value)
    {
       if (Objects.equals(value, this.name))
       {
@@ -40,7 +51,7 @@ public class Shop
       return this.customers != null ? Collections.unmodifiableList(this.customers) : Collections.emptyList();
    }
 
-   public Shop withCustomers(Customer value)
+   public Store withCustomers(Customer value)
    {
       if (this.customers == null)
       {
@@ -55,7 +66,7 @@ public class Shop
       return this;
    }
 
-   public Shop withCustomers(Customer... value)
+   public Store withCustomers(Customer... value)
    {
       for (final Customer item : value)
       {
@@ -64,7 +75,7 @@ public class Shop
       return this;
    }
 
-   public Shop withCustomers(Collection<? extends Customer> value)
+   public Store withCustomers(Collection<? extends Customer> value)
    {
       for (final Customer item : value)
       {
@@ -73,7 +84,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutCustomers(Customer value)
+   public Store withoutCustomers(Customer value)
    {
       if (this.customers != null && this.customers.remove(value))
       {
@@ -83,7 +94,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutCustomers(Customer... value)
+   public Store withoutCustomers(Customer... value)
    {
       for (final Customer item : value)
       {
@@ -92,7 +103,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutCustomers(Collection<? extends Customer> value)
+   public Store withoutCustomers(Collection<? extends Customer> value)
    {
       for (final Customer item : value)
       {
@@ -106,7 +117,7 @@ public class Shop
       return this.products != null ? Collections.unmodifiableList(this.products) : Collections.emptyList();
    }
 
-   public Shop withProducts(Product value)
+   public Store withProducts(Product value)
    {
       if (this.products == null)
       {
@@ -121,7 +132,7 @@ public class Shop
       return this;
    }
 
-   public Shop withProducts(Product... value)
+   public Store withProducts(Product... value)
    {
       for (final Product item : value)
       {
@@ -130,7 +141,7 @@ public class Shop
       return this;
    }
 
-   public Shop withProducts(Collection<? extends Product> value)
+   public Store withProducts(Collection<? extends Product> value)
    {
       for (final Product item : value)
       {
@@ -139,7 +150,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutProducts(Product value)
+   public Store withoutProducts(Product value)
    {
       if (this.products != null && this.products.remove(value))
       {
@@ -149,7 +160,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutProducts(Product... value)
+   public Store withoutProducts(Product... value)
    {
       for (final Product item : value)
       {
@@ -158,7 +169,7 @@ public class Shop
       return this;
    }
 
-   public Shop withoutProducts(Collection<? extends Product> value)
+   public Store withoutProducts(Collection<? extends Product> value)
    {
       for (final Product item : value)
       {
@@ -228,22 +239,11 @@ public class Shop
       this.withoutCustomers(new ArrayList<>(this.getCustomers()));
       this.withoutProducts(new ArrayList<>(this.getProducts()));
    }
-
-   public void process(Order order)
-   {
-      if (order.getState().equals("initial")) {
-         requestPayment(order);
-      }
-      else if (order.getState().equals("payed")) {
-         deliver(order);
-      }
-   }
-
-   private void deliver(Order order)
-   {
-   }
-
-   private void requestPayment(Order order)
-   {
-   }
+   public static final String PROPERTY_name = "name";
+   private String name;
+   public static final String PROPERTY_customers = "customers";
+   private List<Customer> customers;
+   public static final String PROPERTY_products = "products";
+   private List<Product> products;
+   protected PropertyChangeSupport listeners;
 }

@@ -19,7 +19,7 @@ public class Customer
    private List<Order> orders;
    protected PropertyChangeSupport listeners;
    public static final String PROPERTY_shop = "shop";
-   private Shop shop;
+   private Store shop;
 
    public String getCustomerId()
    {
@@ -205,19 +205,14 @@ public class Customer
       this.withoutOrders(new ArrayList<>(this.getOrders()));
    }
 
-   public Shop getShop()
-   {
-      return this.shop;
-   }
-
-   public Customer setShop(Shop value)
+   public Customer setShop(Store value)
    {
       if (this.shop == value)
       {
          return this;
       }
 
-      final Shop oldValue = this.shop;
+      final Store oldValue = this.shop;
       if (this.shop != null)
       {
          this.shop = null;
@@ -230,5 +225,10 @@ public class Customer
       }
       this.firePropertyChange(PROPERTY_shop, oldValue, value);
       return this;
+   }
+
+   public Store getShop()
+   {
+      return this.shop;
    }
 }

@@ -2,6 +2,7 @@ package modelswarddemo;
 
 import org.fulib.builder.ClassModelDecorator;
 import org.fulib.builder.ClassModelManager;
+import org.fulib.builder.Type;
 import org.fulib.classmodel.Clazz;
 
 import static org.fulib.builder.Type.*;
@@ -11,7 +12,7 @@ public class GenModel implements ClassModelDecorator
 	@Override
 	public void decorate(ClassModelManager mm)
 	{
-		Clazz shop = mm.haveClass("Shop", c -> {
+		Clazz shop = mm.haveClass("Store", c -> {
 			c.attribute("name", STRING);
 		});
 		Clazz customer = mm.haveClass("Customer", c ->
