@@ -1,0 +1,225 @@
+- c: 	ClassModel
+  classes: 	store 	customer 	product 	order
+  defaultCollectionType: 	c1
+  defaultPropertyStyle: 	Bean
+  defaultRoleType: 	"java.util.ArrayList<%s>"
+  mainJavaDir: 	"src/main/java"
+  packageName: 	modelswarddemo
+  packageSrcFolder: 	"src/main/java/modelswarddemo"
+
+- store: 	Clazz
+  attributes: 	store_name
+  model: 	c
+  modified: 	false
+  name: 	Store
+  propertyStyle: 	Bean
+  roles: 	store_customers 	store_products
+
+- customer: 	Clazz
+  attributes: 	customer_customerId 	customer_name 	customer_address
+  model: 	c
+  modified: 	false
+  name: 	Customer
+  propertyStyle: 	Bean
+  roles: 	customer_shop 	customer_orders
+
+- product: 	Clazz
+  attributes: 	product_productId 	product_description 	product_price
+  model: 	c
+  modified: 	false
+  name: 	Product
+  propertyStyle: 	Bean
+  roles: 	product_shop 	product_orders
+
+- order: 	Clazz
+  attributes: 	order_orderId 	order_date
+  model: 	c
+  modified: 	false
+  name: 	Order
+  propertyStyle: 	Bean
+  roles: 	order_customer 	order_products
+
+- c1: 	CollectionType
+  implClass: 	class java.util.ArrayList
+  implTemplate: 	"java.util.ArrayList<%s>"
+  itf: 	org.fulib.classmodel.CollectionInterface.List
+  qualifiedImplName: 	java.util.ArrayList
+  simpleImplName: 	ArrayList
+
+- store_name: 	Attribute
+  clazz: 	store
+  id: 	Store_name
+  modified: 	false
+  name: 	name
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- store_customers: 	AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	store
+  collectionType: 	c1
+  id: 	Store_customers
+  modified: 	false
+  name: 	customers
+  other: 	customer_shop
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- store_products: 	AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	store
+  collectionType: 	c1
+  id: 	Store_products
+  modified: 	false
+  name: 	products
+  other: 	product_shop
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- customer_customerId: 	Attribute
+  clazz: 	customer
+  id: 	Customer_customerId
+  modified: 	false
+  name: 	customerId
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- customer_name: 	Attribute
+  clazz: 	customer
+  id: 	Customer_name
+  modified: 	false
+  name: 	name
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- customer_address: 	Attribute
+  clazz: 	customer
+  id: 	Customer_address
+  modified: 	false
+  name: 	address
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- customer_shop: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	customer
+  collectionType: 	c1
+  id: 	Customer_shop
+  modified: 	false
+  name: 	shop
+  other: 	store_customers
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- customer_orders: 	AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	customer
+  collectionType: 	c1
+  id: 	Customer_orders
+  modified: 	false
+  name: 	orders
+  other: 	order_customer
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- product_productId: 	Attribute
+  clazz: 	product
+  id: 	Product_productId
+  modified: 	false
+  name: 	productId
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- product_description: 	Attribute
+  clazz: 	product
+  id: 	Product_description
+  modified: 	false
+  name: 	description
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- product_price: 	Attribute
+  clazz: 	product
+  id: 	Product_price
+  modified: 	false
+  name: 	price
+  propertyStyle: 	Bean
+  type: 	double
+  typeSignature: 	double
+
+- product_shop: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	product
+  collectionType: 	c1
+  id: 	Product_shop
+  modified: 	false
+  name: 	shop
+  other: 	store_products
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- product_orders: 	AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	product
+  collectionType: 	c1
+  id: 	Product_orders
+  modified: 	false
+  name: 	orders
+  other: 	order_products
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- order_orderId: 	Attribute
+  clazz: 	order
+  id: 	Order_orderId
+  modified: 	false
+  name: 	orderId
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- order_date: 	Attribute
+  clazz: 	order
+  id: 	Order_date
+  modified: 	false
+  name: 	date
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- order_customer: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	order
+  collectionType: 	c1
+  id: 	Order_customer
+  modified: 	false
+  name: 	customer
+  other: 	customer_orders
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- order_products: 	AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	order
+  collectionType: 	c1
+  id: 	Order_products
+  modified: 	false
+  name: 	products
+  other: 	product_orders
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+

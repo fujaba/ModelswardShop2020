@@ -9,24 +9,13 @@ import java.beans.PropertyChangeListener;
 
 public class Store
 {
-
-   public void process(Order order)
-   {
-      if (order.getState().equals("initial")) {
-         requestPayment(order);
-      }
-      else if (order.getState().equals("payed")) {
-         deliver(order);
-      }
-   }
-
-   private void deliver(Order order)
-   {
-   }
-
-   private void requestPayment(Order order)
-   {
-   }
+   public static final String PROPERTY_name = "name";
+   private String name;
+   public static final String PROPERTY_customers = "customers";
+   private List<Customer> customers;
+   public static final String PROPERTY_products = "products";
+   private List<Product> products;
+   protected PropertyChangeSupport listeners;
 
    public String getName()
    {
@@ -239,11 +228,27 @@ public class Store
       this.withoutCustomers(new ArrayList<>(this.getCustomers()));
       this.withoutProducts(new ArrayList<>(this.getProducts()));
    }
-   public static final String PROPERTY_name = "name";
-   private String name;
-   public static final String PROPERTY_customers = "customers";
-   private List<Customer> customers;
-   public static final String PROPERTY_products = "products";
-   private List<Product> products;
-   protected PropertyChangeSupport listeners;
+
+   public void process(Order order)
+   {
+      if (order.getState().equals("initial")) {
+         requestPayment(order);
+      }
+      else if (order.getState().equals("payed")) {
+         deliver(order);
+      }
+   }
+
+   private void deliver(Order order)
+   {
+   }
+
+   private void requestPayment(Order order)
+   {
+   }
+
+   public void retrieve(Product product)
+   {
+
+   }
 }
